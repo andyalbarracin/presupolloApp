@@ -1,0 +1,269 @@
+:root {
+  --mainWhite: #f9f9f9;
+  --mainDark: #333333;
+  --mainGreen: #317b22;
+  --mainRed: #b80c09;
+  --mainBlue: #05668d;
+}
+
+body {
+  background: var(--mainWhite);
+  color: var(--mainDark);
+}
+
+h1{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+
+}
+
+/*Estilos para el sector de frases random*/
+.wrapper {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+  
+.container {
+  width: 100%;
+  margin: 3em;
+  background-color: var(--mainDark);
+  padding: 60px;
+  box-shadow: 0 20px 65px rgba(87, 11, 16, 0.5);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.container p {
+  color: var(--mainWhite);
+  line-height: 2;
+  font-size: 18px;
+}
+.container h3 {
+  color: var(--mainWhite);
+  margin: 20px 0 60px 0;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.container button {
+  color: var(--mainWhite);
+  border: none;
+  padding: 15px 45px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--mainBlue);
+  cursor: pointer;
+}
+
+
+
+/*Estilos para el tema del sitio WEB*/
+.darkMode{
+  color: #f9f9f9;
+  background-color: #181818;
+}
+
+.btnexportar{
+  display: flex;
+  justify-content: flex-start;
+  align-content: flex-start;
+  margin: 6em;
+  padding: 2em;
+
+}
+.modos{
+  display: flex;
+  justify-content: end;
+  align-content: flex-end;
+  margin: 2em;
+}
+button{
+  color: var(--mainBlue);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 10px;
+  align-content: flex-end;
+}
+.budget-feedback,
+.expense-feedback {
+  display: none;
+}
+
+.budget-form {
+  border: 0.15rem solid var(--mainGreen);
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+.expense-form {
+  border: 0.15rem solid var(--mainRed);
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+.budget-submit {
+  background: transparent;
+  border: 0.1rem solid var(--mainGreen);
+  color: var(--mainGreen);
+}
+.expense-submit {
+  background: transparent;
+  border: 0.1rem solid var(--mainRed);
+  color: var(--mainRed);
+}
+.expense-submit:hover {
+  background: var(--mainRed);
+  color: var(--mainWhite);
+}
+.budget-submit:hover {
+  background: var(--mainGreen);
+  color: var(--mainDark);
+}
+
+.budget-input {
+  border: 0.05rem solid var(--mainGreen) !important;
+}
+.expense-input {
+  border: 0.05rem solid var(--mainRed) !important;
+}
+.expense-amount,
+.expense-title {
+  color: var(--mainRed);
+}
+.edit-icon {
+  color: var(--mainBlue);
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: none !important;
+}
+.delete-icon {
+  color: var(--mainRed);
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: none !important;
+}
+.edit-icon:hover {
+  color: var(--mainBlue);
+}
+.delete-icon:hover {
+  color: var(--mainRed);
+}
+.showItem {
+  display: block;
+}
+.info-title {
+  font-size: 1.5rem;
+}
+.budget {
+  font-size: 1.6rem;
+  color: var(--mainGreen);
+}
+.expense {
+  font-size: 1.6rem;
+  color: var(--mainRed);
+}
+.balance {
+  font-size: 1.6rem;
+}
+.budget-icon,
+.expense-icon,
+.balance-icon {
+  font-size: 2.5rem;
+  color: var(--mainBlue);
+}
+.showRed {
+  color: var(--mainRed);
+}
+.showGreen {
+  color: var(--mainGreen);
+}
+.showBlack {
+  color: var(--mainDark);
+}
+
+
+.part1,.part2{
+  width: 80%;
+  margin: 20px auto;
+}
+.header{
+  padding: 10px;
+  text-transform: capitalize;
+  font-size: 30px;
+}
+
+form{
+  padding: 20px 10px;
+  margin: 20px auto;
+  border-radius: 3px;
+}
+
+label{
+  text-transform: capitalize;
+  font-size: 20px;
+  display: block;
+  padding-bottom: 5px;
+}
+
+.input{
+  display: block;
+  margin: 20px 0px;
+  padding: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+
+table{
+  margin: 0px auto;
+  border: 2px solid black;
+  text-transform: capitalize;
+  padding: 10px;
+  text-align: center;
+}
+
+table .btn{
+  font-size: 15px;
+}
+
+
+
+
+
+@media screen and (min-width: 992px) {
+  .budget {
+    font-size: 2.6rem;
+    color: var(--mainGreen);
+  }
+  .expense {
+    font-size: 2.6rem;
+    color: var(--mainRed);
+  }
+  .balance {
+    font-size: 2.6rem;
+  }
+  .budget-icon,
+  .expense-icon,
+  .balance-icon {
+    font-size: 3.5rem;
+    color: var(--mainBlue);
+  }
+
+  .container h3 {
+    margin: 20px 0 30px 0;
+    font-weight: 400;
+  }
+}
+.list-item {
+  flex: 0 0 33.33%;
+  text-align: center;
+}
+.expense-item {
+  height: 2rem;
+}
+
+
+
+
