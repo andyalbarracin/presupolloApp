@@ -41,6 +41,8 @@ btnLightMode.addEventListener("click", () => {
   localStorage.setItem("darkMode", false);
 });
 
+//Me traigo lo del DOM a las variables
+
 let enter_budget = document.getElementById("enter_budget");
 let budget_amt = document.getElementById("budget_amt");
 let enter_exp = document.getElementById("enter_exp");
@@ -54,6 +56,7 @@ let tbody = document.getElementById("tbody");
 let modify_elem = document.getElementById("modify");
 let url = location.href.substr(0, location.href.indexOf("#"));
 
+//Guardo y reviso que haya algo en localStorage, si hay lo muestro
 const toStorage = (what, { budget, exp_name, exp_amt, old_name }) => {
   if (typeof Storage !== undefined) {
     let user = localStorage.getItem("user");
@@ -67,6 +70,7 @@ const toStorage = (what, { budget, exp_name, exp_amt, old_name }) => {
         })
       );
     }
+    //Tomo lo que guarde
     user = localStorage.getItem("user");
     user = JSON.parse(user);
     if (what === "updateBudget") {
@@ -79,6 +83,7 @@ const toStorage = (what, { budget, exp_name, exp_amt, old_name }) => {
       if (isExists) {
         swal(exp_name + " ya existe");
       } else {
+        //Lo pusheo a localStorage
         user.expenses.push({ name: exp_name, amt: exp_amt });
         localStorage.setItem(
           "user",
@@ -108,8 +113,8 @@ const toStorage = (what, { budget, exp_name, exp_amt, old_name }) => {
           tbody.insertAdjacentHTML(
             "beforeend",
             `<tr><td>${val.name}</td><td>${val.amt}</td><td>
-                    <button class='btn btn-green' type='button' onclick="updateExp('${val.name}','${val.amt}')"><i class='fa-solid fa-pen-to-square'></i></button>
-                    <button class='btn btn-red' type='button' onclick="deleteExp('${val.name}')"><i class='fa-solid fa-trash-can'></i></button>
+                    <button class='btn btn-green' type='button' onclick="updateExp('${val.name}','${val.amt}')"><img src="/img/edit.png" alt="editar"></button>
+                    <button class='btn btn-red' type='button' onclick="deleteExp('${val.name}')"><img src="/img/borrar.png" alt="borrar"></button>
                     </td></tr>`
           );
           exp_amount += Number(val.amt);
@@ -148,7 +153,7 @@ toStorage("load", {});
 const updateExp = (name, amt) => {
   enter_exp.dataset.task = "updateExpense";
   enter_exp.dataset.old = name;
-  enter_exp.lastElementChild.innerText = "update";
+  enter_exp.lastElementChild.innerText = "Actualiza";
   exp_name.value = name;
   exp_amt.value = amt;
   location.assign(url + "#enter_exp");
@@ -187,7 +192,7 @@ enter_exp.addEventListener("submit", (e) => {
     if (task === "updateExpense") {
       enter_exp.dataset.task = "addExpense";
       enter_exp.dataset.old = "0";
-      enter_exp.lastElementChild.innerText = "add expense";
+      enter_exp.lastElementChild.innerText = "Agregar GasTo";
       location.assign(url + "#tbody");
     }
     enter_exp.reset();

@@ -1,111 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta http-equiv="X-UA-Compatible" content="ie=edge">
- <!-- bootstrap css -->
- <link rel="stylesheet" href="css/bootstrap.min.css">
- <!-- main css -->
- <link rel="stylesheet" href="css/main.css">
- <!-- google fonts -->
- <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
- <!-- font awesome -->
- <link rel="stylesheet" href="./css/fawesome.css">
- <title>Porsupollo Web</title>
- <style>
- </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- main css -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="./css/fawesome.css">
+    <title>Porsupollo Web</title>
+    <style>
+    </style>
 </head>
+
 <body>
     <div class="container-fluid">
-     <div class="row">
-      <div class="col-11 mx-auto pt-3">
-       <!-- titulo -->
-       <h1 class="text-uppercase mb-4">Porsupollo Web</h1>
-        <!-- Tema del sitio -->
-        <div class="modos d-flex flex-row-reverse">
-        <!--<div class="p-2"><button id="eliminarMode" class="btn btn-light">Eliminar Preferencia</button></div>-->
-        <div class="p-2">
-            <button id="botonLightMode" class="btn btn-light">Light</button>
-        </div>
-        <div class="p-2">
-            <button id="botonDarkMode" class="btn btn-dark">Dark</button>
-        </div>
-    </div>
-    <h5 id="modify"></h5>
-    <div class="row">
-        <div class="col-md-5 my-3">
-        <!-- devuelve presupuesto -->
-        <div class="budget-feedback alert alert-danger text-capitalize">Presupuesto revisar</div>
-        <!-- Form presupuesto -->
-            <form id="enter_budget" class="budget-form">
-            <h5 class="text-capitalize">Por favor ingrese su Presupuesto</h5>
-                <div class="form-group">
-                    <input id="budget_amt" class="input form-control budget-input" type="number">
-                </div>
-            <!-- boton enviar -->
-            <button type="submit" class="btn btn-black text-capitalize budget-submit" id="budget-submit">Ingresar</button>
-            </form>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-5 my-3">
-            <form id="enter_exp" data-task="addExpense" data-old="0" class=" expense-form">
-                <h5 class="text-capitalize">Por favor, ingrese sus gastos</h5>
-                <div class="form-group">
-                    <input id="exp_name" class="input" type="text">
-                </div>
-                    <h5 class="text-capitalize">Ingrese un monto de gastos</h5>
-                    <div class="form-group">
-                    <input id="exp_amt" class="input" type="number">
+        <div class="row">
+            <div class="col-11 mx-auto pt-3">
+                <!-- titulo -->
+                <h1 class="text-uppercase mb-4">Porsupollo Web</h1>
+                <!-- Tema del sitio -->
+                <div class="modos d-flex flex-row-reverse">
+                    <!--<div class="p-2"><button id="eliminarMode" class="btn btn-light">Eliminar Preferencia</button></div>-->
+                    <div class="p-2">
+                        <button id="botonLightMode" class="btn btn-light">Light</button>
                     </div>
-                <button class="btn text-capitalize" type="submit">aAgregar Gasto</button>
-            </form>
+                    <div class="p-2">
+                        <button id="botonDarkMode" class="btn btn-dark">Dark</button>
+                    </div>
+                </div>
+                <h5 id="modify"></h5>
+                <div class="row d-flex">
+                    <div class="col-md-5 my-3">
+                        <!-- devuelve presupuesto -->
+                        <div class="budget-feedback alert alert-danger text-capitalize">Presupuesto revisar</div>
+                        <!-- Form presupuesto -->
+                        <form id="enter_budget" class="budget-form">
+                            <h5 class="text-capitalize">Por favor ingrese su Presupuesto</h5>
+                            <div class="form-group">
+                                <input id="budget_amt" class="input form-control budget-input" type="number">
+                            </div>
+                            <!-- boton enviar -->
+                            <button type="submit" class="btn btn-black text-capitalize budget-submit"
+                                id="budget-submit">Ingresar</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- Formulario de Gastos -->
+                <div class="row d-flex">
+                    <div class="col-md-5 my-3">
+                        <form id="enter_exp" data-task="addExpense" data-old="0" class=" expense-form">
+                            <h5 class="text-capitalize">Por favor, ingrese sus gastos</h5>
+                            <div class="form-group">
+                                <input id="exp_name" class="input" type="text">
+                            </div>
+                            <h5 class="text-capitalize">Ingrese un monto de gastos</h5>
+                            <div class="form-group">
+                                <input id="exp_amt" class="input" type="number">
+                            </div>
+                            <button class="btn text-capitalize" type="submit">Agregar Gasto</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Informe de estado -->
+                <div class="container-md">                
+                    <div class="row align-items-star d-flex">
+                        <div class="col">
+                            <h6 class="text-uppercase info-title">fondos</h6>
+                            <span class="budget-icon"><i class="fas fa-money-bill-alt"></i></span>
+                            <h4 id="bud" class="text-uppercase mt-2 budget">$ 0</h4>
+                        </div>
+                        <div class="col">
+                            <h6 class="text-uppercase info-title red">gastos</h6>
+                            <span class="expense-icon"><i class="far fa-credit-card"></i></span>
+                            <h4 id="exp" class="text-uppercase mt-2 budget">$ 0</h4>
+                        </div>
+                        <div class="col">
+                            <h6 class="text-uppercase info-title">balance</h6>
+                            <span class="balance-icon"><i class="fas fa-dollar-sign"></i></span>
+                            <h4 id="balance" class="text-uppercase mt-2 budget">$ 0</h4>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-7 my-3 container-fluid">
+                    <!-- Lista de gastos -->
+                    <table class="d-none" id="table">
+                        <div class="expense-list__info d-flex justify-content-between text-capitalize">
+                            <thead>
+                                <tr>
+                                    <th>Título</th>
+                                    <th>Valor</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody"></tbody>
+                        </div>
+                    </table>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="col-md-7">
-        <!-- Informe de estado -->
-        <div class="row my-3">
-         <div class="col-4 text-center mb-2">
-                <h6 class="text-uppercase info-title">fondos</h6>
-                <i class="fa-solid fa-money-bill-wave"></i>
-                <h4 id="bud" class="green text-uppercase mt-2 budget">$ 0</h4>
-         </div>
-         <div class="col-4 text-center mb-2">
-                <h6 class="text-uppercase info-title">gastos</h6>
-                <i class="fa-regular fa-credit-card"></i>
-                <h4 id="exp" class="red text-uppercase mt-2 budget">$ 0</h4>
-         </div>
-          <div class="col-4 text-center mb-2">
-            <h6 class="text-uppercase info-title">balance</h6>
-            <i class="fa-solid fa-dollar-sign"></i>
-            <h4 id="balance" class="red text-uppercase mt-2 budget">$ 0</h4>
-         </div>
-        </div>
-    </div>
-    
-    <div class="col-md-7 my-3">
-        <!-- Lista de gastos -->
-        <table class="expense-list" id="table">
-              <div class="expense-list__info d-flex justify-content-between text-capitalize">
-                <thead>
-                    <tr>
-                        <th>Título</th>
-                        <th>Valor</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                  <tbody id="tbody"></tbody>
-              </div>
-            </table>
-          </div>
-       </div>              
-        </div>
-            
-        
+
+
         <!-- Frases celebres random -->
-            <div class="wrapper row">
-                <div class="container container-fluid">
+        <div class="wrapper row">
+            <div class="container container-fluid">
                 <p id="frase">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas,
                     magni.
@@ -114,8 +120,8 @@
                 <button id="btn">Inspirame!</button>
             </div>
         </div>
-        </div>
-    </section>
+    </div>
+
     <!-- jquery -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <!-- bootstrap js -->
@@ -125,4 +131,5 @@
     <!-- Sweet Alert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
+
 </html>

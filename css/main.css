@@ -18,6 +18,11 @@ h1{
 
 }
 
+h4{
+  line-height: 2;
+  font-size: 1rem;
+}
+
 /*Estilos para el sector de frases random*/
 .wrapper {
   display: flex;
@@ -87,6 +92,7 @@ button{
   padding: 10px;
   align-content: flex-end;
 }
+
 .budget-feedback,
 .expense-feedback {
   display: none;
@@ -131,34 +137,13 @@ button{
 .expense-title {
   color: var(--mainRed);
 }
-.edit-icon {
-  color: var(--mainBlue);
-  cursor: pointer;
-  font-size: 1rem;
-  text-decoration: none !important;
-}
-.delete-icon {
-  color: var(--mainRed);
-  cursor: pointer;
-  font-size: 1rem;
-  text-decoration: none !important;
-}
-.edit-icon:hover {
-  color: var(--mainBlue);
-}
-.delete-icon:hover {
-  color: var(--mainRed);
-}
-.showItem {
-  display: block;
-}
-.info-title {
-  font-size: 1.5rem;
-}
+
+
 .budget {
   font-size: 1.6rem;
   color: var(--mainGreen);
 }
+
 .expense {
   font-size: 1.6rem;
   color: var(--mainRed);
@@ -183,10 +168,6 @@ button{
 }
 
 
-.part1,.part2{
-  width: 80%;
-  margin: 20px auto;
-}
 .header{
   padding: 10px;
   text-transform: capitalize;
@@ -199,12 +180,6 @@ form{
   border-radius: 3px;
 }
 
-label{
-  text-transform: capitalize;
-  font-size: 20px;
-  display: block;
-  padding-bottom: 5px;
-}
 
 .input{
   display: block;
@@ -215,6 +190,9 @@ label{
 }
 
 
+.container{
+  align-items: flex-start;
+}
 
 table{
   margin: 0px auto;
@@ -223,11 +201,26 @@ table{
   padding: 10px;
   text-align: center;
 }
-
 table .btn{
-  font-size: 15px;
+  font-size: 1em;
+}
+td,th{
+  padding: 10px;
+  font-size: 2em;
 }
 
+
+
+
+.green{
+  color: var(--mainGreen);
+}
+.red{
+  color: var(--mainRed);
+}
+.blue{
+  color: var(--mainBlue);
+}
 
 
 
